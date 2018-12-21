@@ -36,6 +36,16 @@ class TodoViewController: UITableViewController {
             navigationItem.title = "To-Do"
             titleTextField.text = todo.title
             isCompleteButton.isSelected = todo.isComplete
+            
+            if isCompleteButton.isSelected == true {
+                isCompleteButton.setImage(UIImage(named : "Checked"), for: .normal)
+            }else {
+
+                isCompleteButton.setImage(UIImage(named : "Unchecked"), for: .normal)
+            }
+            
+            
+            
             dueDatePickerView.date = todo.dueDate
             notesTextView.text = todo.notes
         } else {
@@ -128,6 +138,13 @@ class TodoViewController: UITableViewController {
         
         
         isCompleteButton.isSelected = !isCompleteButton.isSelected
+        if isCompleteButton.isSelected == true {
+            isCompleteButton.setImage(UIImage(named : "Checked"), for: .normal)
+        }else {
+            
+            isCompleteButton.setImage(UIImage(named : "Unchecked"), for: .normal)
+        }
+        
         
         
     }

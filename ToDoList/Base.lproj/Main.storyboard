@@ -25,33 +25,35 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee9-mp-rW8">
-                                            <rect key="frame" x="24" y="4" width="44" height="36"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="36" id="VZY-sU-xK1"/>
-                                            </constraints>
-                                            <state key="normal" image="Unchecked"/>
-                                            <connections>
-                                                <action selector="completedButtonTapped" destination="x0j-yM-MNy" eventType="touchUpInside" id="msb-M6-OjS"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCs-at-hNG">
-                                            <rect key="frame" x="76" y="11.5" width="275" height="21"/>
+                                            <rect key="frame" x="76" y="11.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ueo-21-45R">
+                                            <rect key="frame" x="24" y="4" width="44" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="a08-Sb-Pqm"/>
+                                            </constraints>
+                                            <state key="normal" image="Unchecked"/>
+                                            <state key="selected" image="Checked"/>
+                                            <connections>
+                                                <action selector="completedButtonTapped" destination="x0j-yM-MNy" eventType="touchUpInside" id="YaG-h7-QPq"/>
+                                                <action selector="isCompleteButtonTapped:" destination="pyv-na-puP" eventType="touchUpInside" id="AoQ-hS-v2k"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ee9-mp-rW8" firstAttribute="leading" secondItem="r6a-v8-hYQ" secondAttribute="leadingMargin" constant="8" id="C5w-hv-EzR"/>
-                                        <constraint firstItem="kCs-at-hNG" firstAttribute="leading" secondItem="Ee9-mp-rW8" secondAttribute="trailing" constant="8" id="Mmi-kh-P8g"/>
+                                        <constraint firstItem="kCs-at-hNG" firstAttribute="leading" secondItem="Ueo-21-45R" secondAttribute="trailing" constant="8" id="MGi-fH-uU9"/>
                                         <constraint firstItem="kCs-at-hNG" firstAttribute="centerY" secondItem="r6a-v8-hYQ" secondAttribute="centerY" id="Q90-m6-qan"/>
-                                        <constraint firstItem="Ee9-mp-rW8" firstAttribute="centerY" secondItem="r6a-v8-hYQ" secondAttribute="centerY" id="QzY-SZ-EfM"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="kCs-at-hNG" secondAttribute="trailing" constant="8" id="cHy-rv-qOH"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kCs-at-hNG" secondAttribute="trailing" id="cHy-rv-qOH"/>
+                                        <constraint firstItem="Ueo-21-45R" firstAttribute="leading" secondItem="r6a-v8-hYQ" secondAttribute="leadingMargin" constant="8" id="kg4-RC-4ze"/>
+                                        <constraint firstItem="Ueo-21-45R" firstAttribute="centerY" secondItem="r6a-v8-hYQ" secondAttribute="centerY" id="xTC-u3-S08"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="isCompleteButton" destination="Ee9-mp-rW8" id="6xZ-JX-cfB"/>
+                                    <outlet property="isCompleteButton" destination="Ueo-21-45R" id="zHf-ud-LwW"/>
                                     <outlet property="titleLabel" destination="kCs-at-hNG" id="Z9e-eA-y32"/>
                                     <segue destination="pyv-na-puP" kind="show" identifier="showDetails" id="l6g-X3-Cg2"/>
                                 </connections>
@@ -93,14 +95,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S40-Tu-Fuq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="98" height="43.5"/>
-                                                    <state key="normal" title="Button" image="Checked"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="43.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <state key="selected" image="Checked"/>
                                                     <connections>
                                                         <action selector="isCompleteButtonTapped:" destination="pyv-na-puP" eventType="touchUpInside" id="NoH-xS-efS"/>
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remind me to ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwr-oj-GKA">
-                                                    <rect key="frame" x="98" y="0.0" width="277" height="43.5"/>
+                                                    <rect key="frame" x="54" y="0.0" width="321" height="43.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
